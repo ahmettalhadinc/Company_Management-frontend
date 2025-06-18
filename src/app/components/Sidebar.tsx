@@ -13,11 +13,12 @@ import { useSelector } from 'react-redux';
 const Sidebar = () => {
     const barStatus = useSelector((state: RootState) => state.managementSlice.barStatus)
     return (
-        <div className='bg-indigo-700 flex flex-col pl-5 pr-10 gap-y-2 h-screen transition-all duration-500 ease-in-out '>
+        <div className={`bg-indigo-700 flex flex-col gap-y-2 min-h-screen overflow-hidden transition-[width] duration-500 ease-in-out ${barStatus ? 'w-20 items-center hover:w-30' : 'w-64 pl-5 pr-10'}`}>
+
             
             <div className='flex flex-col items-center justify-center'>
 
-                <FaRegUserCircle fontSize={100} color='white' className={`${barStatus ? 'hidden' : ''} text-white mt-5`} />
+                <FaRegUserCircle fontSize={100}  color='white' className={`${barStatus ? 'hidden' : ''} text-white mt-5`} />
                 <h1 className={`${barStatus ? 'hidden' : ''} text-2xl font-bold text-gray-300`}>Welcome</h1>
             </div>
             <Link href="/dashboard">

@@ -5,13 +5,13 @@ import React from 'react'
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <StoreProvider>
+  
 
    
     <div>
         <div className='flex flex-row  '>
 
-        <Sidebar/>
+        <Sidebar />
         <div className='flex flex-col flex-1'>
             <Navbar/>
                {children}
@@ -20,7 +20,6 @@ const layout = ({ children }: { children: React.ReactNode }) => {
         </div>
     
     </div> 
-    </StoreProvider>
   )
 }
 

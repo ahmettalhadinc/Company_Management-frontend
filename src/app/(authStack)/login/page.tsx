@@ -1,8 +1,11 @@
+import Login from '@/app/components/Login'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <div className='flex h-screen flex-col justify-center items-center'>
+     <Login/>
+    </div>
   )
 }
 

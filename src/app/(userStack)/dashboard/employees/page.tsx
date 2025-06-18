@@ -1,21 +1,17 @@
+import DataGrid from '@/app/components/DataGrid';
+import AddEmployee from '@/app/components/forms/AddEmployee';
 import { getEmployees } from '@/app/lib/api/employee';
 import React from 'react';
 
 const Page = async () => {
-  let products = [];
-
-  try {
-    const res = await getEmployees();  // axios response
-    products = res.data.data;          // asıl liste burada
-  } catch (error) {
-    console.error(error);
-  }
+  const res= await getEmployees()
+  const employees= res.data.data
 
   return (
     <div>
-      {products.map((p: any) => (
-        <div key={p.id}>{p.name}</div>
-      ))}
+      <h1>Employee Table</h1>
+      <DataGrid employees={employees}/>
+      <AddEmployee/>
     </div>
   );
 };
