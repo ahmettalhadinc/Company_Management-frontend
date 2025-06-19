@@ -1,4 +1,4 @@
-import api from '../api'
+import api from '../lib/api'
 import https from 'https';
 
 const agent = new https.Agent({
@@ -11,3 +11,4 @@ export const deleteUser = (id: number) => api.get(`/Users/Remove?id=${id}`, { ht
 
 export const updateUser = (id: string, data: any) => api.put(`/Users/${id}`, data);
 export const createUser = (data: any) => api.post('/Users', data);
+export const loginUser = (data: any) => api.post('/Users/Login', data);

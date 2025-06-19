@@ -1,6 +1,7 @@
+import { getEmployees } from '@/app/api/employee';
 import DataGrid from '@/app/components/DataGrid';
 import AddEmployee from '@/app/components/forms/AddEmployee';
-import { getEmployees } from '@/app/lib/api/employee';
+
 import React from 'react';
 
 const Page = async () => {

@@ -1,4 +1,4 @@
-import api from '../api'
+import api from '../lib/api'
 import https from 'https';
 
 const agent = new https.Agent({

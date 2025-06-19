@@ -5,7 +5,6 @@ export function middleware(request: NextRequest) {
   const token = request.cookies.get('token')?.value
   const { pathname } = request.nextUrl
 
-  // Authsuz kullanıcı userstack'e girmeye çalışıyorsa login'e yönlendir
   if (!token && pathname.startsWith('/dashboard')) {
     return NextResponse.redirect(new URL('/login', request.url))
   }

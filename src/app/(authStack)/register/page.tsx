@@ -1,5 +1,5 @@
 import Register from '@/app/components/Register'
-import { getRoles } from '@/app/lib/api/roles'
+import { getRoles } from '@/app/api/roles'
 import React from 'react'
 
 const page = async () => {

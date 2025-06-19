@@ -8,9 +8,12 @@ import { MdRemoveRedEye } from 'react-icons/md';
 import { FcDepartment } from "react-icons/fc";
 import { RootState } from '../store/store';
 import { useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
+
 
 
 const Sidebar = () => {
+   
     const barStatus = useSelector((state: RootState) => state.managementSlice.barStatus)
     return (
         <div className={`bg-indigo-700 flex flex-col gap-y-2 min-h-screen overflow-hidden transition-[width] duration-500 ease-in-out ${barStatus ? 'w-20 items-center hover:w-30' : 'w-64 pl-5 pr-10'}`}>

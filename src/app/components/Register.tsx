@@ -1,9 +1,8 @@
 'use client'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { getRoles } from '../lib/api/roles'
 import  {Role}  from '../lib/types/role_type';
-import { createUser } from '../lib/api/users';
+import { createUser } from '../api/users';
 
 interface Props {
   roles: Role[];
