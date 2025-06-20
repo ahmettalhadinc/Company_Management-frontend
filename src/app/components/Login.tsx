@@ -24,7 +24,7 @@ function Login() {
   headers: {
     'Content-Type': 'application/json',
   },
-  body: JSON.stringify({ token }),  // token değişkeni kesinlikle dolu olmalı
+  body: JSON.stringify({ token }), 
   credentials: 'include',
 });
 
