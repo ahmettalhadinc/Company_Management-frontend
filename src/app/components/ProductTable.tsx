@@ -14,7 +14,10 @@ import AddEmployee from './forms/AddEmployee';
 import { TiTick } from "react-icons/ti";
 import { ImCross } from "react-icons/im";
 import AddProduct from './forms/AddProduct';
-
+import { FaArrowUp } from "react-icons/fa";
+import { FaArrowDown } from "react-icons/fa";
+import IncreaseProduct from './forms/IncreaseProduct';
+import DecreaseProduct from './forms/DecreaseProduct';
 
 interface Props {
     products: Product[];
@@ -24,8 +27,11 @@ interface Props {
 
 
 export default function DataGrid({ products }: Props) {
-    const fontStyle="!font-bold"
+    const fontStyle = "!font-bold"
     const [show, setShow] = React.useState<boolean>(false)
+    const [selectedProduct, setselectedProduct] = React.useState<Product | null>(null)
+    const [Increase, setIncrease] = React.useState<Boolean>(false)
+    const [Decrease, setDecrease] = React.useState<Boolean>(false)
     return (
         <div className='mt-10 px-4'>
             <div className='flex justify-between'>
@@ -35,11 +41,11 @@ export default function DataGrid({ products }: Props) {
             <div className="w-full overflow-x-auto">
 
 
-                <TableContainer component={Paper}>
+                <TableContainer className='mt-10 ' component={Paper}>
                     <Table sx={{ minWidth: 150, maxWidth: 1 }} aria-label="simple table">
                         <TableHead>
                             <TableRow>
-                                <TableCell  className={fontStyle} align='left'>Product's Name</TableCell>
+                                <TableCell className={fontStyle} align='left'>Product's Name</TableCell>
                                 <TableCell className={fontStyle} align="center">Price</TableCell>
                                 <TableCell className={fontStyle} align="center">Stock</TableCell>
                                 <TableCell className={fontStyle} align="center">Created Date</TableCell>
@@ -65,12 +71,21 @@ export default function DataGrid({ products }: Props) {
                                     })}</TableCell>
                                     <TableCell align="center">
                                         <div className="flex justify-center items-center">
-                                            {product.stock > 0 ? <TiTick color='green' fontSize={25} /> :<ImCross color="red" /> }
+                                            {product.stock > 0 ? <TiTick color='green' fontSize={25} /> : <ImCross color="red" />}
                                         </div>
                                     </TableCell>
                                     <TableCell align="center">
-
-                                        <DeleteForeverIcon className='text-red-600 cursor-pointer' />
+                                        < div className='flex justify-center items-center gap-4'>
+                                            <FaArrowUp onClick={() => {
+                                                setIncrease(true)
+                                                setselectedProduct(product)
+                                            }} className='cursor-pointer' color='green' fontSize={20} />
+                                            <DeleteForeverIcon className='text-red-600 cursor-pointer' />
+                                            <FaArrowDown onClick={() => {
+                                                setDecrease(true)
+                                                setselectedProduct(product)
+                                            }} className='cursor-pointer' color='blue' fontSize={20} />
+                                        </div>
                                     </TableCell>
 
                                 </TableRow>
@@ -82,6 +97,12 @@ export default function DataGrid({ products }: Props) {
             </div>
             {
                 show ? <AddProduct setShow={setShow} /> : null
+            }
+             {
+                Increase ? <IncreaseProduct increase={setIncrease} selectedProduct={selectedProduct} /> : null
+            }
+            {
+                Decrease ? <DecreaseProduct decrease={setDecrease} selectedProduct={selectedProduct} /> : null
             }
 
         </div>

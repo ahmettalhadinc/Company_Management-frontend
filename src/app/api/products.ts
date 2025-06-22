@@ -9,6 +9,8 @@ export const getProducts = () => api.get('/ProductsControllers',{ httpsAgent: ag
 export const deleteProduct = (id: number) => api.get(`/ProductsControllers/Remove?id=${id}`, { httpsAgent: agent });
 
 export const updateProduct = (id: string, data: any) => api.put(`/ProductsControllers/${id}`, data);
+export const increaseStock = ( product: any) => api.post(`/ProductsControllers/IncreaseStock`, product);
+export const decreaseStock = ( product: any) => api.post(`/ProductsControllers/DecreaseStock`, product);
 export const createProduct = async (data: any) => {
   // İlk olarak token'ı al
   const res = await fetch('/api/token', { credentials: 'include' });
