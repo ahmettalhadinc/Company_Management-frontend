@@ -1,36 +1,54 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 🚀 ERP Management System (Frontend)
 
-First, run the development server:
+A modern ERP dashboard application built with **Next.js 15**, **Tailwind CSS**, **Material UI**, **React Icons**, and **TypeScript**. It features JWT-based authentication using **HTTP-only cookies**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📦 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- ⚡ **Next.js 15** (App Router)
+- 🎨 **Tailwind CSS** – utility-first styling
+- 🧱 **Material UI (MUI)** – for tables, modals, buttons
+- 🔤 **TypeScript** – type-safe development
+- 🔐 **JWT Authentication** – managed via HTTP-only cookies
+- 🍪 **Cookies** – secure session storage
+- ⚙️ **React Icons** – for UI icons and actions
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🔐 Authentication & Middleware
 
-To learn more about Next.js, take a look at the following resources:
+- Upon login, a JWT token is stored securely in an HTTP-only cookie.
+- Middleware (`middleware.ts`) ensures protected routes like `/dashboard` are only accessible with a valid token.
+- Authenticated users are redirected away from `/login` and `/register`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features
+ Login / Register pages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ JWT session management with cookies
 
-## Deploy on Vercel
+ CRUD for roles, departments, employees
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+ MUI-powered tables and dialogs
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ Responsive and accessible UI with Tailwind
+
+ Modal-based form components
+
+ Type-safe API interactions
+
+## Notes
+Backend is powered by a .NET Web API.
+
+## Screenshoots
+![image](https://github.com/user-attachments/assets/234740c6-5586-479e-918b-e092af06af1c)
+![image](https://github.com/user-attachments/assets/c01094ef-e6f3-44df-bf35-68c492c85cc2)
+![image](https://github.com/user-attachments/assets/843a9968-d9a9-4ad6-bbca-bda68bc6b6b6)
+![image](https://github.com/user-attachments/assets/5c41aabc-ac5e-4254-ade0-db1beb1dd7d1)
+![image](https://github.com/user-attachments/assets/2b07cea1-15d8-4d76-8c88-ac3d980fec0f)
+![image](https://github.com/user-attachments/assets/a2134c9d-d7fe-4a36-8633-b9a8a5e830fe)
+
+![image](https://github.com/user-attachments/assets/01066591-c0f1-4d2e-9715-79c6fafbaf27)
+
