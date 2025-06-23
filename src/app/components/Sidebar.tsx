@@ -36,13 +36,6 @@ const Sidebar = () => {
                     <h1 className={`${barStatus ? 'hidden' : ''} text-white`}>Employee Management</h1>
                 </div>
             </Link>
-            <Link href="/dashboard/roles">
-                <div className='flex flex-row gap-x-1 items-center  hover:bg-indigo-500 p-2 cursor-pointer rounded-2xl'>
-                    <MdRemoveRedEye color='white' />
-                    <h1 className={`${barStatus ? 'hidden' : ''} text-white`}>Role Management</h1>
-                </div>
-            </Link>
-
             <Link href="/dashboard/products">
                 <div className='flex flex-row gap-x-1 items-center  hover:bg-indigo-500 p-2 cursor-pointer rounded-2xl'>
                     <AiFillProduct color='white' />
@@ -55,6 +48,13 @@ const Sidebar = () => {
                     <h1 className={`${barStatus ? 'hidden' : ''} text-white`}>Department Management</h1>
                 </div>
             </Link>
+            <Link href="/dashboard/roles">
+                <div className='flex flex-row gap-x-1 items-center  hover:bg-indigo-500 p-2 cursor-pointer rounded-2xl'>
+                    <MdRemoveRedEye color='white' />
+                    <h1 className={`${barStatus ? 'hidden' : ''} text-white`}>Role Management</h1>
+                </div>
+            </Link>
+
 
         </div>
     )

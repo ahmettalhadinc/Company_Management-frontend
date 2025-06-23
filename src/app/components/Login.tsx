@@ -41,7 +41,7 @@ function Login() {
 }
   }
   return (
-    <div className='flex flex-col justify-center items-center'>
+    <div className='backdrop-blur-md bg-blue-300 p-15 rounded-2xl shadow-xl flex flex-col justify-center items-center'>
         <h1 className='font-extrabold text-2xl mb-5'>LOGIN</h1>
         <form onSubmit={handleSubmit} className='flex flex-col gap-y-5 justify-center items-center'>
             <input className='bg-[#F0EDFF] p-4 rounded-2xl' placeholder='Email'  type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />

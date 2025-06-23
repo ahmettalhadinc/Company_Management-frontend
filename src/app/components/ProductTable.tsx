@@ -63,7 +63,7 @@ export default function DataGrid({ products }: Props) {
                                     <TableCell component="th" scope="row">
                                         {product.name}
                                     </TableCell>
-                                    <TableCell align="center">{product.price}</TableCell>
+                                    <TableCell align="center">{product.price} ₺</TableCell>
                                     <TableCell align="center">{product.stock}</TableCell>
                                     <TableCell align="center"> {new Date(product.createdDate).toLocaleString('tr-TR', {
                                         dateStyle: 'short',
